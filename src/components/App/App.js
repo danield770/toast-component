@@ -1,4 +1,4 @@
-import React from 'react'; // initial commit
+import React from 'react';
 
 import ToastPlayground from '../ToastPlayground';
 import Footer from '../Footer';
