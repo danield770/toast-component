@@ -19,17 +19,17 @@ function ToastPlayground() {
   }
   function handleSubmit(event) {
     event.preventDefault();
+    if (!message) return;
     const newToast = {
       id: Date.now(),
       variant,
       message,
     };
     setToastData([...toastData, newToast]);
+    setMessage('');
+    setVariant(VARIANT_OPTIONS[0]);
   }
-  function resetToastData(event) {
-    event.stopPropagation();
-    setToastData([]);
-  }
+
   console.log({ toastData });
 
   return (
@@ -90,7 +90,7 @@ function ToastPlayground() {
           <div className={styles.row}>
             <div className={styles.label} />
             <div className={`${styles.inputWrapper} ${styles.radioWrapper}`}>
-              <Button onMouseUp={resetToastData}>Pop Toast!</Button>
+              <Button>Pop Toast!</Button>
             </div>
           </div>
         </div>
