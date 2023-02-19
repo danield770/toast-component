@@ -10,7 +10,7 @@ const VARIANT_OPTIONS = ['notice', 'warning', 'success', 'error'];
 function ToastPlayground() {
   const [message, setMessage] = React.useState('');
   const [variant, setVariant] = React.useState(VARIANT_OPTIONS[0]);
-  const { createToast, resetToasts } = React.useContext(ToastContext);
+  const { createToast } = React.useContext(ToastContext);
 
   function handleSubmit(event) {
     event.preventDefault();
